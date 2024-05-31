@@ -24,7 +24,7 @@ const data = {
     },
     parliment: {
         coords: [47.50708596220176, 19.045706215252615],
-        title: "Parlament"
+        title: "<table><tr><th>Name</th><th>Hungarian Parliment</th></tr><tr><th>Built</th><th>1885</th></tr></table>"
     },
     örs: {
         coords: [47.50328319964548, 19.13629962199086],
