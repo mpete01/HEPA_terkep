@@ -1,0 +1,38 @@
+body {
+    padding: 5px;
+}
+
+#header {
+    height: 8vh;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header_photo {
+    max-height: 8vh;
+    width: auto;
+}
+
+.header_photo:nth-last-child(2){
+    margin-left: 50%;
+    margin-right: 2em;
+}
+
+
+#title_div {
+    color: rgb(48, 60, 115);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 1.5vw;
+}
+
+#blue-line {
+    height: 0.3vh;
+    background-color: rgb(48, 60, 115);
+}
+
+#map {
+    height: 100vh;
+}
