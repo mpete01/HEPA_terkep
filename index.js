@@ -5,7 +5,17 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-const markers = L.markerClusterGroup();
+var markers = L.markerClusterGroup({
+    iconCreateFunction: function (cluster) {
+      var childCount = cluster.getChildCount();
+      var content = "<div class='marker-cluster-number'>" + childCount + "</div>";
+  
+      return L.divIcon({
+        html: content,
+        className: 'marker-cluster'
+      });
+    }
+  });
 
 const data = {
     HEPA: {
@@ -19,6 +29,10 @@ const data = {
     örs: {
         coords: [47.50328319964548, 19.13629962199086],
         title: "Örs Vezér tere"
+    },
+    szolnok: {
+        coords: [47.179357200331374, 20.175712254956014],
+        title: "Szolnok <3"
     }
 }
 
@@ -38,5 +52,5 @@ for(key in data){
     );
 }
 
+let cum = map.addLayer(markers);
 
-map.addLayer(markers);

@@ -16,16 +16,16 @@ body {
 }
 
 .header_photo:nth-last-child(2){
-    margin-left: 50%;
     margin-right: 2em;
 }
 
 
 #title_div {
     color: rgb(48, 60, 115);
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: bold;
     margin-left: 1.5vw;
+    margin-right: 25vw;
 }
 
 #blue-line {
@@ -36,3 +36,14 @@ body {
 #map {
     height: 100vh;
 }
+
+.marker-cluster-number {
+    font-weight: bold;
+    color: white;
+    background-color: rgb(48, 60, 115);
+    text-align: center;
+    padding: 1em;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+  }
