@@ -1,0 +1,18 @@
+#table {
+    border-radius: 5%;
+    border-collapse: collapse;
+    width: auto;
+}
+
+tr{
+    width: 100%;
+}
+
+.right {
+    padding-left: 3vw;
+}
+
+tr:nth-child(odd) {
+   border-top: 1px solid black; 
+   border-bottom: 1px solid black;
+}

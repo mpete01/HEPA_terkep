@@ -17,10 +17,12 @@ var markers = L.markerClusterGroup({
     }
   });
 
+let table = `<iframe src="pop-up-contents.html" id="table" style="border: none; width: auto"></iframe>`
+
 const data = {
     HEPA: {
         coords: [47.51015366794261, 19.036559441362126],
-        title: "HEPA"
+        title: table
     },
     parliment: {
         coords: [47.50708596220176, 19.045706215252615],
@@ -45,12 +47,11 @@ for(key in data){
     const location = data[key]
 
     markers.addLayer(L.marker(location.coords, {
-        title: location.title,
+        //title: location.title,
         icon: customIcon
-    })  .bindPopup(`${location.title}`)
+    })  .bindPopup(`${location.title}`) 
         .addTo(map)
     );
 }
 
 let cum = map.addLayer(markers);
-
