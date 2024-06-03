@@ -1,5 +1,6 @@
 body {
     padding: 5px;
+    height: 100%;
 }
 
 #header {
@@ -33,8 +34,13 @@ body {
     background-color: rgb(48, 60, 115);
 }
 
+main {
+    height: 100%;
+}
+
 #map {
-    height: 100vh;
+    width: 98.5vw;
+    height: 90vh;
 }
 
 .marker-cluster-number {

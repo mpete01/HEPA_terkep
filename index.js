@@ -1,5 +1,5 @@
 const map = L.map('map')
-map.setView([47.5101537757505, 19.03665249551403], 15);
+map.setView([47.5101537757505, 19.03665249551403], 9);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -17,21 +17,24 @@ var markers = L.markerClusterGroup({
     }
   });
 
-let table = `<iframe src="pop-up-contents.html" id="table" style="border: none; width: auto"></iframe>`
+let tableContents = {
+    DHISTECH : `<table id="DHISTECH"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">3DHISTECH Fejlesztő Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Összeszerelő üzem létesítése Kínában </td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Kína</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Kína</td></tr></table>`,
+    ADABAU : `<table id="ADABAU"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">"ADA-BAU" Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Összeszerelő üzem létesítése Kínában </td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Kína</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Kína</td></tr></table>`
+}
 
 const data = {
-    HEPA: {
-        coords: [47.51015366794261, 19.036559441362126],
-        title: table
-    },
-    parliment: {
-        coords: [47.50708596220176, 19.045706215252615],
-        title: "<table><tr><th>Name</th><th>Hungarian Parliment</th></tr><tr><th>Built</th><th>1885</th></tr></table>"
-    },
-    örs: {
-        coords: [47.50328319964548, 19.13629962199086],
-        title: "Örs Vezér tere"
-    }
+        DHISTECH : {
+            name : "DHISTECH",
+            coords: [47.514735772669646, 19.151116889143506],
+            title: tableContents.DHISTECH,
+            number : 1
+        },
+        ADABAU : {
+            name : "ADABAU",
+            coords: [47.11043721101071, 17.904032888864954],
+            title: tableContents.ADABAU,
+            number : 2
+        }
 }
 
 const customIcon = L.icon({
@@ -39,15 +42,22 @@ const customIcon = L.icon({
     iconSize: [25, 55]
 })
 
+
+let counter = 1
 for(key in data){
     const location = data[key]
-
-    markers.addLayer(L.marker(location.coords, {
-        //title: location.title,
+    if(counter == location.number) {
+        //console.log(`counter: ${counter}\tlocation.number: ${location.number}\t${location.title}`)
+        markers.addLayer(L.marker(location.coords, {
+                //title: location.title,
         icon: customIcon
-    })  .bindPopup(`${location.title}`) 
-        .addTo(map)
-    );
+        })  .bindPopup(`${location.title}`)
+            .addTo(map)
+        );
+    }
+    counter +=1
 }
+
+
 
 let cum = map.addLayer(markers);
