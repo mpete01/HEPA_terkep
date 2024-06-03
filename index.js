@@ -31,10 +31,6 @@ const data = {
     örs: {
         coords: [47.50328319964548, 19.13629962199086],
         title: "Örs Vezér tere"
-    },
-    szolnok: {
-        coords: [47.179357200331374, 20.175712254956014],
-        title: "Szolnok <3"
     }
 }
 
