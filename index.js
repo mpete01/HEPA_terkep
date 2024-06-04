@@ -320,7 +320,7 @@ const data = {
 //creating custom markers
 const customIcon = L.icon({
     iconUrl: 'images\\pinpoint-marker.png',
-    iconSize: [25, 55]
+    iconSize: [15, 35]
 })
 
 //creating marker clusters 
