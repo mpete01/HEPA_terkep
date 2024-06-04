@@ -1,3 +1,4 @@
+//initialize leaflet map
 const map = L.map('map')
 map.setView([47.50731411663321, 19.0424930352922], 18);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -6,6 +7,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
+//popup content for each company
 let tableContents = {
     DHISTECH : `<table id="DHISTECH"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">3DHISTECH Fejlesztő Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Összeszerelő üzem létesítése Kínában </td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Kína</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Kína</td></tr></table>`,
     ADABAU : `<table id="ADABAU"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">"ADA-BAU" Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Összeszerelő üzem létesítése Kínában </td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Kína</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Kína</td></tr></table>`,
@@ -52,6 +54,8 @@ let tableContents = {
     HARGITAGRO : `<table id="HARGITAGRO"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">HargitAgro Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Konyhakész friss burgonya és steak burgonya feldolgozó üzem létrehozása</td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Románia</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Gyergyóalfalu</td></tr></table>`
 }
 
+
+//data about each company
 const data = {
         DHISTECH : {
             name : "DHISTECH",
@@ -313,11 +317,13 @@ const data = {
         }
 }
 
+//creating custom markers
 const customIcon = L.icon({
     iconUrl: 'images\\pinpoint-marker.png',
     iconSize: [25, 55]
 })
 
+//creating marker clusters 
 var markers = L.markerClusterGroup({
     iconCreateFunction: function (cluster) {
       var childCount = cluster.getChildCount();
@@ -330,6 +336,8 @@ var markers = L.markerClusterGroup({
     }
   });
 
+
+//adding the markers to map and fetching the information about the companies
 let counter = 1
 for(key in data){
     const location = data[key]
@@ -348,4 +356,4 @@ for(key in data){
 
 
 
-let cum = map.addLayer(markers);
+let finalmap = map.addLayer(markers);
