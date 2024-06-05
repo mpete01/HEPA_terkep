@@ -368,3 +368,13 @@ function updateTime() {
   }
 updateTime();
 setInterval(updateTime, 100); //updateing every second (makes it look dynamic)
+
+
+document.getElementById("search-btn").onclick = function() {
+    let searchTerm = document.getElementById("search").value.toUpperCase()
+    for(let i = 0; i <= Object.keys(data).length; i++){
+        if(data[searchTerm].number == i){
+            map.flyTo(data[searchTerm].coords, 17)
+        }
+    }
+}

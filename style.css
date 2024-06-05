@@ -21,14 +21,36 @@ body {
     width: auto;
 }
 
-#current-time {
+.searchbar {
     background-color: white;
     border-radius: 25px 25px 25px 25px;
     height: fit-content;
     padding: 1rem;
     margin-top: auto;
     margin-bottom: auto;
+    display: flex;
+    justify-content: space-between;
 }
+
+.searchbar-input {
+    margin-right: 2em;
+    border: 2px solid rgb(48, 60, 115);
+    border-radius: 25px 25px 25px 25px;
+}
+
+.searchabr-submit {
+    background-color: transparent;
+    border: none;
+    color: rgb(48, 60, 115);
+    cursor: pointer;
+    margin-right: 2em;
+    font-weight: bold;
+}
+.searchabr-submit:hover {
+    border: 2px solid rgb(48, 60, 115);
+    border-radius: 25px 25px 25px 25px;
+}
+
 /* HEPA color: color: rgb(48, 60, 115); */
 main {
     max-height: 100vh;
