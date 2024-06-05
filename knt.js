@@ -429,5 +429,18 @@ const data_nybbt = {
 }
 
 function changeMaps() {
-
+    let counter = 0
+    for(key in data_nybbt){
+        const location = data_nybbt[key]
+        if(counter == location.number) {
+            //console.log(`counter: ${counter}\tlocation.number: ${location.number}\t${location.title}`)
+            markers.addLayer(L.marker(location.coords, {
+                    //title: location.title,
+            icon: customIcon
+            })  .bindPopup(`${location.title}`)
+                .addTo(map)
+            );
+        }
+        counter +=1
+    }
 }
