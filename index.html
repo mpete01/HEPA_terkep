@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HEPA térkép</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -18,13 +18,11 @@
 <body>
     <header id="header">
         <img src="images/hepa_logo.jpg" alt="HEPA_logo" id="HEPA_logo" class="header_photo">
-        <!--<div id="title_div">HEPA Hungarian Export Promotion Agency</div> -->
-        <img src="images/magyar-kormany-logo.jpg" alt="magyar-kormany-logo" id="magyar-kormany-logo" class="header_photo">
-        <img src="images/eu_logo.png" alt="eu_logo" id="eu_logo" class="header_photo">
+        <div id="current-time"></div>
     </header>
     <main id="main">
         <section id="mapSection">
-            <div id="blue-line"></div>
+            <div id="map-title">Térképtér - KNT</div>
             <div id="map"></div>
         </section>
     </main>

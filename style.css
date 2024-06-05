@@ -1,54 +1,61 @@
+:root {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 body {
     padding: 5px;
     height: 100%;
+    background-color: rgb(244, 247, 254);
 }
 
 #header {
     height: 8vh;
-    padding: 0.5em;
+    margin-bottom: 0.5em;
     display: flex;
-    align-items: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    justify-content: space-between;
 }
 
-.header_photo {
+#HEPA_logo {
+    border-radius: 20px 20px 20px 20px;
     max-height: 8vh;
     width: auto;
 }
 
-.header_photo:nth-last-child(2){
-    margin-right: 2em;
+#current-time {
+    background-color: white;
+    border-radius: 25px 25px 25px 25px;
+    height: fit-content;
+    padding: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
-
-#HEPA_logo {
-    margin-right: 69vw;
-}
-
-#title_div {
-    color: rgb(48, 60, 115);
-    font-size: 2em;
-    font-weight: bold;
-    margin-left: 1.5vw;
-    margin-right: 25vw;
-}
-
-#blue-line {
-    height: 0.3vh;
-    background-color: rgb(48, 60, 115);
-}
-
+/* HEPA color: color: rgb(48, 60, 115); */
 main {
-    height: 100%;
+    max-height: 100vh;
+    max-width: 100vw;
+    background-color: rgb(244, 247, 254);
+}
+
+#map-title {
+    height: 6vh;
+    background-color: white;
+    border-radius: 20px 0 0 20px;
+    color: rgb(48, 60, 115);
+    font-weight: bolder;
+    size: 3rem;
+    font-size: 2rem;
+    padding: 1.5vw 1vw 0.8vw 1vw ;
+    border-radius: 20px 20px 0px 0px;
 }
 
 #map {
-    width: 98.5vw;
-    height: 90vh;
+    width: 100%;
+    height: 80vh;
 }
 
 .marker-cluster-number {
     font-weight: bold;
-    color: white;
+    color: rgb(244, 247, 254);
     background-color: rgb(48, 60, 115);
     text-align: center;
     padding: 1em;

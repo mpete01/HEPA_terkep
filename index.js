@@ -1,6 +1,6 @@
 //initialize leaflet map
 const map = L.map('map')
-map.setView([47.50731411663321, 19.0424930352922], 18);
+map.setView([47.50705146571801, 19.0456791857778], 18);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -353,7 +353,18 @@ for(key in data){
     counter +=1
 }
 
-
-
-
 let finalmap = map.addLayer(markers);
+
+//adding time
+function updateTime() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+
+    var formattedTime = hours + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+
+    document.getElementById("current-time").innerHTML = formattedTime;
+  }
+updateTime();
+setInterval(updateTime, 1000); //updateing every second
