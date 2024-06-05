@@ -8,7 +8,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 //popup content for each company
-let tableContents = {
+const tableContents = {
     DHISTECH : `<table id="DHISTECH"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">3DHISTECH Fejlesztő Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Összeszerelő üzem létesítése Kínában </td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Kína</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Kína</td></tr></table>`,
     ADABAU : `<table id="ADABAU"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">"ADA-BAU" Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Összeszerelő üzem létesítése Kínában </td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Kína</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Kína</td></tr></table>`,
     AKTIV : `<table id="AKTIV"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">AKTÍV Ipari, Építőipari és Kereskedelmi Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Betonacél- és lakatos feldolgozó, valamint mély- és közműépítési csarnoképület kivitelezése Szabadkán</td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Szerbia</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Szabadka</td></tr></table>`,
@@ -377,4 +377,57 @@ document.getElementById("search-btn").onclick = function() {
             map.flyTo(data[searchTerm].coords, 17)
         }
     }
+}
+
+const tableContents_nybbt = {
+    HODLER : `<table id="HODLER"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">Hodler Fruits Kft.</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Folyik az adatok lekérése. Néhány másodperc múlva próbálkozzon újra a kivágással vagy a másolással.</td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Szerbia</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Arilje</td></tr></table>`,
+    KITE : `<table id="KITE"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">KITE Mezőgazdasági Szolgáltató és Kereskedelmi Zártkörűen Működő Részvénytársaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">A KITE Zrt. szerbiai beruházása</td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Szerbia</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Csenej, Szávaszentdemeter</td></tr></table>`,
+    KESZ : `<table id="KESZ"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">KÉSZ Holding Vállalkozásfejlesztő és Vagyonkezelő Zártkörű Részvénytársaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">KÉSZ Csoport Szerb Köztársaságban történő gazdasági tevékenységének fejlesztése </td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Szerbia</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Belgrád</td></tr></table>`,
+    REV : `<table id="REV"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">Rév Gázipari Kft.</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">A KRISTÁLY Kft. vajdasági telephely fejlesztése</td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Szerbia</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Zenta</td></tr></table>`,
+    REGINET : `<table id="REGINET"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">REGINET Nyugat-dunántúli Tanácsadó Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Szimulátoros gépjárművezető-oktatás Szerbiában, Boszniában és Montenegróban</td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Szerbia</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Szabadka</td></tr></table>`,
+    SZEREMSEG : `<table id="SZEREMSEG"><tr class="rows"><td class="table-data left">Kezdeményezett</td><td class="table-data right">Szerémség Ingatlanfejlesztő Korlátolt Felelősségű Társaság</td></tr><tr class="rows"><td class="table-data left">Projekt címe</td><td class="table-data right">Bor, wellness és konferencia Hotel létesítése, a kiemelt turisztikai fejlesztési térséghez tartozó Karlócában</td></tr><tr class="rows"><td class="table-data left">Célország</td><td class="table-data right">Szerbia</td></tr><tr class="rows"><td class="table-data left">Megvalósítási helyszín</td><td class="table-data right">Karlóca</td></tr></table>`
+}
+
+const data_nybbt = {
+    HODLER : {
+        name : "HODLER",
+        coords: [47.51750902665994, 19.054776082254627],
+        title: tableContents_nybbt.HODLER,
+        number : 1
+    },
+    KITE : {
+        name : "KITE",
+        coords : [47.01643907474422, 20.605741016103867],
+        title : tableContents_nybbt.KITE,
+        number : 2
+    },
+    KESZ : {
+        name : "KESZ",
+        coords : [47.470638956013495, 19.08242787976114],
+        title : tableContents_nybbt.KESZ,
+        number : 3
+    },
+    REV : {
+        name : "REV",
+        coords : [47.48277698903804, 19.121518171944796],
+        title : tableContents_nybbt.REV,
+        number : 4
+    },
+    REGINET : {
+        name : "REGINET",
+        coords : [47.687364580973444, 17.63147414255555],
+        title : tableContents_nybbt.REGINET,
+        number : 5
+    },
+    SZEREMSEG : {
+        name : "SZEREMSEG",
+        coords : [47.4399429634462, 18.752267555267668],
+        title : tableContents_nybbt.SZEREMSEG,
+        number : 6
+    }
+
+}
+
+function changeMaps() {
+
 }
