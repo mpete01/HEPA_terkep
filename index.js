@@ -1,6 +1,6 @@
 //initialize leaflet map
 const map = L.map('map')
-map.setView([47.50705146571801, 19.0456791857778], 18);
+map.setView([47.50705146571801, 19.0456791857778], 15);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -367,4 +367,4 @@ function updateTime() {
     document.getElementById("current-time").innerHTML = formattedTime;
   }
 updateTime();
-setInterval(updateTime, 1000); //updateing every second
+setInterval(updateTime, 100); //updateing every second (makes it look dynamic)
