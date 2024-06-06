@@ -16,21 +16,27 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha512-8A7i+2nKffdIYwULSEFkvwzGtq5zQ8yDb4VWFC1q58fxHgOLBsDwKE+uONQkpXcT7eHhYzVJqC2wj73VWdmQw==" crossorigin=""></script>
 </head>
 </head>
-<body>
+<body onload="kntMap">
     <header id="header">
         <img src="images/hepa_logo.jpg" alt="HEPA_logo" id="HEPA_logo" class="header_photo">
         <div class="searchbar">
+            <select name="dropdown" id="dropdown">
+                <option value="Térképtér - KNT" class="options" id="knt"><button>Térképtér - KNT</button></option>
+                <option value="Térképtér - NYBBT" id="nybbt" class="options">Térképtér - NYBBT</option>
+            </select>
             <input type="search" class="searchbar-input" id="search">
             <button class="searchabr-submit" type="button" id="search-btn">Search</button>
             <div id="current-time" class="searchbar-time"></div>
         </div>    
     </header>
     <main id="main">
+        <button id="rem">remove</button>
         <section id="mapSection">
-            <div id="map-title">Térképtér - KNT</div>
+            <div id="map-title"></div>
             <div id="map"></div>
         </section>
     </main>
+
 </body>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
