@@ -7,13 +7,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
     //creating custom markers
-    const customIcon = L.icon({
+    /*const customIcon = L.icon({
         iconUrl: 'images\\pinpoint-marker.png',
         iconSize: [15, 35]
-    })
+    })*/
 
     //creating marker clusters 
-    var markers = L.markerClusterGroup({
+    var markers = new L.markerClusterGroup({
         iconCreateFunction: function (cluster) {
         var childCount = cluster.getChildCount();
         var content = "<div class='marker-cluster-number'>" + childCount + "</div>";
@@ -343,16 +343,16 @@ function kntMap() {
     for(key in data){
         const location = data[key]
         if(counter == location.number) {
-            markers.addLayer(L.marker(location.coords, {
-            icon: customIcon
-            })  .bindPopup(`${location.title}`)
-                .addTo(map)
-            );
-        } else {
-            continue
+            markers.addLayer(L.marker(location.coords), {
+            icon: L.icon({
+                iconUrl: 'images\\pinpoint-marker.png',
+                iconSize: [15, 35]
+            })
+            })  .addTo(map)
+                .bindPopup(`${location.title}`)
+            ;
         }
         counter +=1
-
     }
     map.addLayer(markers);
     document.getElementById("map-title").innerHTML = "Térképtér - KNT"
@@ -433,15 +433,19 @@ function nybbtMap() {
     
     }
 
+    let custom_icon = L.icon({
+        iconUrl: "search-icon.png",
+        iconSize: [15, 35]
+    })
     let counter = 1
     for(key in data_nybbt){
         const location = data_nybbt[key]
         if(counter == location.number) {
-            markers.addLayer(L.marker(location.coords, {
-            icon: customIcon
-            })  .bindPopup(`${location.title}`)
-                .addTo(map)
-            );
+            markers.addLayer(L.marker(location.coords), {
+            icon: custom_icon
+            })  .addTo(map)
+                .bindPopup(`${location.title}`)
+            ;
         }
         counter +=1
     }
