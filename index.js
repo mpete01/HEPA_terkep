@@ -1,6 +1,6 @@
 //initialize leaflet map
 const map = L.map('map')
-map.setView([47.50705146571801, 19.0456791857778], 15);
+map.setView([47.16730126394951, 19.21779061282728], 8);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -360,10 +360,23 @@ function kntMap() {
         let searchTerm = document.getElementById("search").value.toUpperCase()
         for(let i = 0; i <= Object.keys(data).length; i++){
             if(data[searchTerm].number == i){
-                map.flyTo(data[searchTerm].coords, 17)
+                map.flyTo(data[searchTerm].coords, 5)
             }
         }
     }
+    document.getElementById("search").addEventListener("keydown", (event) => {
+        if(event.key === "Enter") {
+            let searchTerm = document.getElementById("search").value.toUpperCase()
+            for(let i = 0; i <= Object.keys(data).length; i++){
+                if(data[searchTerm].number == i){
+                    map.flyTo(data[searchTerm].coords, 5)
+                }
+            }
+        }
+    }
+    )
+    
+
     let currentButton = document.getElementById("kntButton")
     currentButton.disabled = true;
     currentButton.style.opacity = "50%"
@@ -438,10 +451,22 @@ function nybbtMap() {
         let searchTerm = document.getElementById("search").value.toUpperCase()
         for(let i = 0; i <= Object.keys(data_nybbt).length; i++){
             if(data_nybbt[searchTerm].number == i){
-                map.flyTo(data_nybbt[searchTerm].coords, 17)
+                map.flyTo(data_nybbt[searchTerm].coords, 8)
             }
         }
     }
+    document.getElementById("search").addEventListener("keydown", (event) => {
+        if(event.key === "Enter") {
+            let searchTerm = document.getElementById("search").value.toUpperCase()
+            for(let i = 0; i <= Object.keys(data_nybbt).length; i++){
+                if(data_nybbt[searchTerm].number == i){
+                    map.flyTo(data_nybbt[searchTerm].coords, 8)
+                }
+            }
+        }
+    }
+
+    )
     let currentButton = document.getElementById("nybbtButton")
     currentButton.disabled = true;
     currentButton.style.opacity = "50%"
