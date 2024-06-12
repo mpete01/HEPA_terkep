@@ -356,6 +356,16 @@ function kntMap(){
 
     }
     map.addLayer(markers);
+    document.getElementById("search-btn").onclick = function() {
+        let searchTerm = document.getElementById("search").value.toUpperCase()
+        console.log(searchTerm)
+        for(let i = 0; i <= Object.keys(data).length; i++){
+            if(data[searchTerm].number == i){
+                console.log("balls and cum xddddd")
+                map.flyTo(data[searchTerm].coords, 17)
+            }
+        }
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -409,7 +419,7 @@ function nybbtMap() {
     
     }
 
-    const customIcon = L.icon({
+    /*const customIcon = L.icon({
         iconUrl: 'images\\pinpoint-marker.png',
         iconSize: [15, 35]
     })
@@ -424,15 +434,13 @@ function nybbtMap() {
             className: 'marker-cluster'
           });
         }
-      });
+      });*/
 
     let counter = 1
     for(key in data_nybbt){
         const location = data_nybbt[key]
         if(counter == location.number) {
-            //console.log(`counter: ${counter}\tlocation.number: ${location.number}\t${location.title}`)
             markers.addLayer(L.marker(location.coords, {
-                    //title: location.title,
             icon: customIcon
             })  .bindPopup(`${location.title}`)
                 .addTo(map)
@@ -441,10 +449,6 @@ function nybbtMap() {
         counter +=1
     }
     map.addLayer(markers);
-    //console.log("nybbt")
-    document.getElementById("rem").onclick = function removeMarker() {
-        map.removeLayer(markers)
-    }
 }
 
 const selectElement = document.getElementById("dropdown");
@@ -459,6 +463,7 @@ selectElement.addEventListener('change', function() {
   if (selectedOptionDiv.innerHTML == "Térképtér - KNT") {
         selectedOptionDiv.innerHTML = "Térképtér - KNT"
         kntMap()
+        
   } else if (selectedOptionDiv.innerHTML == "Térképtér - NYBBT") {
         selectedOptionDiv.innerHTML = "Térképtér - NYBBT"
         nybbtMap()
@@ -488,5 +493,4 @@ document.getElementById("search-btn").onclick = function() {
         }
     }
 }
-
 
