@@ -360,12 +360,12 @@ function kntMap() {
         let searchTerm = document.getElementById("search").value.toUpperCase()
         for(let i = 0; i <= Object.keys(data).length; i++){
             if(data[searchTerm].number == i){
-                console.log("balls and cum xddddd")
                 map.flyTo(data[searchTerm].coords, 17)
             }
         }
     }
     let currentButton = document.getElementById("kntButton")
+    currentButton.disabled = true;
     currentButton.style.opacity = "50%"
     currentButton.style.cursor = "not-allowed"
 }
@@ -438,12 +438,12 @@ function nybbtMap() {
         let searchTerm = document.getElementById("search").value.toUpperCase()
         for(let i = 0; i <= Object.keys(data_nybbt).length; i++){
             if(data_nybbt[searchTerm].number == i){
-                console.log("balls and cum xddddd")
                 map.flyTo(data_nybbt[searchTerm].coords, 17)
             }
         }
     }
     let currentButton = document.getElementById("nybbtButton")
+    currentButton.disabled = true;
     currentButton.style.opacity = "50%"
     currentButton.style.cursor = "not-allowed"
 }
