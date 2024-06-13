@@ -501,7 +501,7 @@ document.getElementById("nybbtButton").addEventListener("click", function() {
     sessionStorage.setItem("reloading", "nybbtMap");
     document.location.reload();
 });
-  
+//try setting default preference with localStorage (kill me)
 window.onload = function() {
     var reloading = sessionStorage.getItem("reloading");
     if (reloading) {
