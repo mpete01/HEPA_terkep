@@ -360,7 +360,7 @@ function kntMap() {
         let searchTerm = document.getElementById("search").value.toUpperCase()
         for(let i = 0; i <= Object.keys(data).length; i++){
             if(data[searchTerm].number == i){
-                map.flyTo(data[searchTerm].coords, 5)
+                map.flyTo(data[searchTerm].coords, 16)
             }
         }
     }
@@ -369,7 +369,7 @@ function kntMap() {
             let searchTerm = document.getElementById("search").value.toUpperCase()
             for(let i = 0; i <= Object.keys(data).length; i++){
                 if(data[searchTerm].number == i){
-                    map.flyTo(data[searchTerm].coords, 5)
+                    map.flyTo(data[searchTerm].coords, 16)
                 }
             }
         }
@@ -451,11 +451,12 @@ function nybbtMap() {
     }
     map.addLayer(markers);
     document.getElementById("map-title").innerHTML = "Térképtér - NYBBT"
+
     document.getElementById("search-btn").onclick = function() {
         let searchTerm = document.getElementById("search").value.toUpperCase()
         for(let i = 0; i <= Object.keys(data_nybbt).length; i++){
             if(data_nybbt[searchTerm].number == i){
-                map.flyTo(data_nybbt[searchTerm].coords, 8)
+                map.flyTo(data_nybbt[searchTerm].coords, 16)
             }
         }
     }
@@ -464,7 +465,7 @@ function nybbtMap() {
             let searchTerm = document.getElementById("search").value.toUpperCase()
             for(let i = 0; i <= Object.keys(data_nybbt).length; i++){
                 if(data_nybbt[searchTerm].number == i){
-                    map.flyTo(data_nybbt[searchTerm].coords, 8)
+                    map.flyTo(data_nybbt[searchTerm].coords, 16)
                 }
             }
         }
@@ -512,3 +513,17 @@ window.onload = function() {
         sessionStorage.removeItem("reloading");
     }
 }
+
+const body = document.getElementById("body");
+const map_title = document.getElementById("map-title")
+const main = document.getElementById("main")
+/*const main = document.getElementById("main");
+const header = document.getElementById("header")*/
+const toggleButton = document.getElementById("toggle-theme");
+
+toggleButton.addEventListener("click", function() {
+    body.style.backgroundColor = "rgb(48, 60, 115)"
+    map_title.style.backgroundColor = "rgb(48, 60, 115)"
+    map_title.style.color = "rgb(244, 247, 254)"
+    main.style.backgroundColor = "rgb(48, 60, 115)"
+})

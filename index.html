@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,24 +15,24 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha512-8A7i+2nKffdIYwULSEFkvwzGtq5zQ8yDb4VWFC1q58fxHgOLBsDwKE+uONQkpXcT7eHhYzVJqC2wj73VWdmQw==" crossorigin=""></script>
 </head>
 </head>
-<body onload="kntMap">
-    <header id="header">
+<body id="body" class="dark-mode">
+    <header id="header" class="dark-mode">
         <img src="images/hepa_logo.jpg" alt="HEPA_logo" id="HEPA_logo" class="header_photo">
         <div class="searchbar">
             <button id="kntButton" class="options">Térképtér - KNT</button>
             <button id="nybbtButton" class="options">Térképtér - NYBBT</button>
             <input type="search" class="searchbar-input" id="search">
-            <button class="searchabr-submit" type="submit" id="search-btn">Search</button>
+            <button class="searchabr-submit" type="submit" id="search-btn">Keresés</button>
             <div id="current-time" class="searchbar-time"></div>
+            <div id="dark-mode" class="search-darkmode"><button id="toggle-theme"><img src="images/darkmode.png" alt="darkmode" id="darkmode" class="searchbar-darkmode"></button></div>
         </div>    
     </header>
-    <main id="main">
+    <main id="main" class="dark-mode">
         <section id="mapSection">
             <div id="map-title"></div>
             <div id="map"></div>
         </section>
     </main>
-
 </body>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
