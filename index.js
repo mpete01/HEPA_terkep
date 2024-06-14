@@ -502,6 +502,7 @@ document.getElementById("nybbtButton").addEventListener("click", function() {
     document.location.reload();
 });
 //try setting default preference with localStorage (kill me)
+//see how many times page has been loaded, if <1 load kntMap() else break out of conditional
 window.onload = function() {
     var reloading = sessionStorage.getItem("reloading");
     if (reloading) {
