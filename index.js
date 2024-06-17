@@ -342,18 +342,16 @@ function kntMap() {
     let counter = 1
     for(key in data){
         const location = data[key]
-        if(counter == location.number) {
-            markers.addLayer(L.marker(location.coords), {
-            icon: L.icon({
-                iconUrl: 'images\\pinpoint-marker.png',
-                iconSize: [15, 35]
-            })
-            })  .addTo(map)
-                .bindPopup(`${location.title}`)
-            ;
-        }
+
+        const marker = L.marker(location.coords).addTo(markers); // Add marker to the cluster group
+
+        marker.bindPopup(location.title);
+
         counter +=1
     }
+
+    markers.addTo(map)
+
     map.addLayer(markers);
     document.getElementById("map-title").innerHTML = "Térképtér - KNT"
     document.getElementById("search-btn").onclick = function() {
@@ -440,15 +438,15 @@ function nybbtMap() {
     let counter = 1
     for(key in data_nybbt){
         const location = data_nybbt[key]
-        if(counter == location.number) {
-            markers.addLayer(L.marker(location.coords), {
-            icon: custom_icon
-            })  .addTo(map)
-                .bindPopup(`${location.title}`)
-            ;
-        }
+
+        const marker = L.marker(location.coords).addTo(markers); // Add marker to the cluster group
+
+        marker.bindPopup(location.title);
+
         counter +=1
     }
+    markers.addTo(map)
+    
     map.addLayer(markers);
     document.getElementById("map-title").innerHTML = "Térképtér - NYBBT"
 
@@ -525,6 +523,8 @@ const toggleButton = document.getElementById("toggle-theme");
 let isDarkMode = false; // Track the current state
 
 toggleButton.addEventListener("click", function() {
-  isDarkMode = !isDarkMode; // Toggle the state
-  html.classList.toggle("darkMode"); // Toggle the class on the body element
+    isDarkMode = !isDarkMode; // Toggle the state
+    html.classList.toggle("darkMode", isDarkMode); // Toggle the class on the body element
 });
+  
+  
