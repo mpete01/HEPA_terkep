@@ -123,3 +123,21 @@ main {
     height: fit-content;
     width: fit-content;
 }
+  /*body.style.backgroundColor = isDarkMode ? "rgb(48, 60, 115)" : "white";
+  mapTitle.style.backgroundColor = isDarkMode ? "rgb(48, 60, 115)" : "white";
+  mapTitle.style.color = isDarkMode ? "rgb(244, 247, 254)" : "black";
+  main.style.backgroundColor = isDarkMode ? "rgb(48, 60, 115)" : "white";*/
+.darkMode{
+    #body{
+        background-color: rgba(38, 48, 92, 0.6);
+    }
+    #main {
+        border-radius: 20px 20px 0px 0px;
+    }
+    #map-title{
+        background-color: rgba(38, 48, 92, 0.8);
+        color: rgb(244, 247, 254);
+        border-radius: 20px 20px 0px 0px;
+        border: 1px solid rgb(244, 247, 254);
+    }
+}

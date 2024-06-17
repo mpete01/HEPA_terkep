@@ -515,15 +515,22 @@ window.onload = function() {
 }
 
 const body = document.getElementById("body");
-const map_title = document.getElementById("map-title")
+const mapTitle = document.getElementById("map-title")
 const main = document.getElementById("main")
 /*const main = document.getElementById("main");
 const header = document.getElementById("header")*/
 const toggleButton = document.getElementById("toggle-theme");
 
+let isDarkMode = false; // Track the current state
+
 toggleButton.addEventListener("click", function() {
-    body.style.backgroundColor = "rgb(48, 60, 115)"
-    map_title.style.backgroundColor = "rgb(48, 60, 115)"
-    map_title.style.color = "rgb(244, 247, 254)"
-    main.style.backgroundColor = "rgb(48, 60, 115)"
-})
+  isDarkMode = !isDarkMode; // Toggle the state
+  html.classList.toggle("darkMode"); // Toggle the class on the body element
+  console.log("balls xdd")
+});
+
+
+  /*body.style.backgroundColor = isDarkMode ? "rgb(48, 60, 115)" : "white";
+  mapTitle.style.backgroundColor = isDarkMode ? "rgb(48, 60, 115)" : "white";
+  mapTitle.style.color = isDarkMode ? "rgb(244, 247, 254)" : "black";
+  main.style.backgroundColor = isDarkMode ? "rgb(48, 60, 115)" : "white";*/
