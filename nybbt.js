@@ -160,11 +160,4 @@ toggleButton.addEventListener("click", function() {
     html.classList.toggle("darkMode")
 });
 
-
-if (sessionStorage.getItem("counter") === null) {
-    sessionStorage.setItem("counter", 1); // Set initial value to "0" (replace with your default value)
-    sessionStorage.getItem("counter") +1
-    kntMap(); // Execute your function
-  } 
-
 nybbtMap()
